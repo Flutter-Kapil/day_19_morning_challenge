@@ -8,18 +8,10 @@
 import 'package:test/test.dart';
 
 List sortNumbers(List<int> numbersList) {
-  numbersList.sort();
-  List<int> finalList = [];
-
+  numbersList.sort((a, b) => (a.toString().length == b.toString().length)
+      ? (a.compareTo(b))
+      : b.toString().length.compareTo(a.toString().length));
   return numbersList;
-}
-
-List reverseList(List x) {
-  List output = [];
-  for (int i = x.length - 1; i >= 0; i--) {
-    output.add(x[i]);
-  }
-  return output;
 }
 
 // Challenge 3
